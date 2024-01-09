@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.m0sh.proto;
+option go_package = "github.com/diegom0ta/grpc-server/pb";
+
+service User {
+    rpc GetById(GetByIdRequest) returns (GetByIdResponse){}
+}
+
+message GetByIdRequest {
+    int64 id = 1;
+}
+
+message GetByIdResponse {
+    int64 id = 1;
+    string name = 2;
+}
